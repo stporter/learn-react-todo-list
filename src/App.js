@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import TodoList from './TodoList';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos';
 
@@ -60,3 +60,7 @@ export default App;
 // useState returns an array so we can destructure that array and then set it to useState - the first element is all of our todos and the second element is a function that allows us to update our todos [todos, setTodos]
 
 // all componenets are going to have "props" that we can pass to them just like we pass attributes to an HTML element - we have a prop todos on our todo list and we want to pass the todos variable to that prop todos
+
+// { useRef } - allows us to reference elementes within our HTML
+
+// { useEffect } - is a function which is going to take as its first parameter another function and this and this is the function that we want to do things so every single time something changes, we want to call this very first function and the way we determine when to call that function is we pass an array of properties here and this array is going to be all of our dependencies - so anytime anything in this array changes we want to run the useEffect function
